@@ -25,4 +25,5 @@ def main():
 
 main()
 
-
+test_score = 25
+print(calculate_result(test_score))
