@@ -6,12 +6,21 @@ def validate_password(user_input):
 
 
 def main():
+    password = get_password()
+
+    print_password(password)
+
+
+def print_password(password):
+    for char in password:
+        print("*", end="")
+
+
+def get_password():
     password = input("Please enter a password greater than or equal to {} characters: ".format(MIN_LENGTH))
     while not validate_password(password):
         password = input("Please enter a password greater than or equal to {} characters: ".format(MIN_LENGTH))
-
-    for char in password:
-        print("*", end="")
+    return password
 
 
 main()
