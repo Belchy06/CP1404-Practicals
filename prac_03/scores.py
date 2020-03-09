@@ -22,6 +22,9 @@ def get_number_of_scores():
 
 
 def generate_scores(number_of_scores):
+    """
+    Generate a list of scores the same length as the number of scores required
+    """
     scores = []
     for i in range(number_of_scores):
         scores.append(random.randint(0, 100))
@@ -29,6 +32,9 @@ def generate_scores(number_of_scores):
 
 
 def calculate_result(score):
+    """
+    Calculate the score based on the result
+    """
     if score < 0:
         return "Invalid score"
     else:
