@@ -9,6 +9,7 @@ def exercise_1():
     numbers = get_list_of_numbers(number_of_nums)
     print_number_facts(numbers)
 
+
 def get_list_of_numbers(number_of_nums):
     numbers = []
     for i in range(1, number_of_nums + 1):
@@ -35,3 +36,25 @@ def print_number_facts(list_of_numbers):
 
 
 exercise_1()
+
+
+def exercise_2():
+    usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface',
+                 'BaseStdIn', 'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer',
+                 'bob']
+    username = get_username()
+    while username not in usernames:
+        print("Access denied")
+        username = get_username()
+    else:
+        print("Access granted")
+
+
+def get_username():
+    return input("Enter your username: ")
+
+
+exercise_2()
+
+
+def exercise_3():
