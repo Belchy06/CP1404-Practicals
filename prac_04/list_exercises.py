@@ -16,8 +16,11 @@ def get_list_of_numbers(number_of_nums):
         valid_number = False
         while not valid_number:
             try:
-                number = int(input("Number: "))
-                valid_number = True
+                number = int(input("Number {}: ".format(i)))
+                if number < 0:
+                    print("Enter a number greater than 0!")
+                else:
+                    valid_number = True
             except:
                 print("Please enter a valid number!")
         numbers.append(number)
