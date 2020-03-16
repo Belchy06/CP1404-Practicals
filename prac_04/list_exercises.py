@@ -55,6 +55,3 @@ def get_username():
 
 
 exercise_2()
-
-
-def exercise_3():
