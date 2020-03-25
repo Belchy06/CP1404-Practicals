@@ -29,7 +29,7 @@ def find_occurrences(input_string):
 
 def print_occurrences(word_occurrences):
     string_spacing = len(max(word_occurrences, key=len))
-    for key, value in word_occurrences.items():
+    for key, value in sorted(word_occurrences.items()):
         print("{:{}}: {}".format(key, string_spacing, value))
 
 
