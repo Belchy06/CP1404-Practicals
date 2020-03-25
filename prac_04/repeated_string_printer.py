@@ -13,18 +13,20 @@ def get_string_sequence():
     sequence = []
     string = input("Enter a string!: ")
     while string is not "":
-        sequence.append(string)
+        sequence.append(string.lower())
         string = input("Enter a string!: ")
     return sequence
 
 
 def find_repeated_strings(string_sequence):
-    repeated_strings = []
-    repeated_string = [string for string in string_sequence if string_sequence.count(string) >= 2]
-    for index, string in enumerate(repeated_string):
-        if repeated_string[index] not in repeated_strings:
-            repeated_strings.append(repeated_string[index])
-    return repeated_strings
+    repeated_strings_raw = [repeated_string for repeated_string in string_sequence
+                            if string_sequence.count(repeated_string) >= 2]
+    repeated_strings_filtered = []
+    for index, string in enumerate(repeated_strings_raw):
+        if string not in repeated_strings_filtered:
+            repeated_strings_filtered.append(string)
+    print(repeated_strings_filtered)
+    return repeated_strings_filtered
 
 
 def print_repeated_strings(repeated_strings):
@@ -39,6 +41,7 @@ def print_repeated_strings(repeated_strings):
 def main():
     print_instructions()
     string_sequence = get_string_sequence()
+    #string_sequence = ["hello", "world", "hello", "world", ".", ""]
     repeated_strings = find_repeated_strings(string_sequence)
     print_repeated_strings(repeated_strings)
 
