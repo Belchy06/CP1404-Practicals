@@ -10,14 +10,14 @@ class Guitar:
         self.year = year
         self.cost = cost
 
-    def __str__(self):
+    def __repr__(self):
         """ Format the output to be "Name (Year) : Cost" """
         return "{} ({}) : {:.2f}".format(self.name, self.year, self.cost)
 
     def get_age(self):
         """ Returns the age of the guitar eg.  2020 - 1922 = 98 """
-        return datetime.datetime.year() - self.year
+        return datetime.datetime.now().year - self.year
 
     def is_vintage(self):
         """ Returns true or false depending on if the guitar is older than 50 years """
-        return self.get_age() > 50
+        return self.get_age() >= 50
