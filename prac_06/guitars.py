@@ -24,7 +24,7 @@ def main():
 
 def validate_numeric_input(input_name):
     """
-    Both the year and cost need to be above 0 to be valid numeric inputs
+    Validate the numeric inputs required to be above 0
     """
     valid_input = False
     while not valid_input:
