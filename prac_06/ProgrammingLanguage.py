@@ -1,4 +1,4 @@
-"""CP1404 Practical - Programming language intermeriate exercise"""
+"""CP1404 Practical - Programming language intermediate exercise"""
 
 
 class ProgrammingLanguage:
