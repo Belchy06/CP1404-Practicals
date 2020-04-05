@@ -14,7 +14,7 @@ class ProgrammingLanguage:
         self.reflection = reflection
         self.year = year
 
-    def __str__(self):
+    def __repr__(self):
         return "{}, {} Typing, Reflection = {}, First appeared in {}".format(self.name, self.typing,
                                                                              self.reflection, self.year)
 
