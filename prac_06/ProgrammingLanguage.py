@@ -2,13 +2,14 @@
 
 
 class ProgrammingLanguage:
-    def __init__(self, typing="", reflection=False, year=""):
+    def __init__(self, name="", typing="", reflection=False, year=""):
         """
         Initialize the class with the default values
 
         reflection = boolean
         """
 
+        self.name = name.title()
         self.typing = typing.title()
         self.reflection = reflection
         self.year = year
