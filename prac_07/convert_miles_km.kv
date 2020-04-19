@@ -7,7 +7,8 @@ BoxLayout:
             text: '6'
             font_size: 48
             multiline: False
-            on_text_validate: app.convert(float(input_miles.text))
+            on_text_validate: app.convert(input_miles.text)
+            on_text: app.convert(input_miles.text)
 
         BoxLayout:
             orientation: 'vertical'
@@ -19,9 +20,9 @@ BoxLayout:
                 text: 'Down'
                 on_press: app.handle_increment(-1)
 
-    Button:
-        text: 'Convert Miles to KM'
-        on_press: app.convert(float(input_miles.text))
+#    Button:
+#        text: 'Convert Miles to KM'
+#        on_press: app.convert(input_miles.text)
 
     Label:
         text: app.result

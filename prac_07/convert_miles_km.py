@@ -13,6 +13,8 @@ __author__ = 'William Belcher'
 
 from kivy.properties import StringProperty
 
+CONVERSION_RATIO = 1.60934
+
 
 class ConvertMilesKmApp(App):
     """ ConvertMilesKmApp is a Kivy App for converting miles to km """
@@ -27,11 +29,20 @@ class ConvertMilesKmApp(App):
         return self.root
 
     def handle_increment(self, increment):
-        new_value = float(self.root.ids.input_miles.text) + increment
+        if self.root.ids.input_miles.text == "":
+            new_value = 0.0 + increment
+        else:
+            new_value = float(self.root.ids.input_miles.text) + increment
+
         self.root.ids.input_miles.text = str(new_value)
 
-    def convert(self, miles):
-        self.result = str(miles * 1.60934)
+    def convert(self, miles_string):
+        try:
+            # Check if input is a number by trying to convert value calculated to a float
+            miles = float(miles_string)
+            self.result = str(miles * CONVERSION_RATIO)
+        except ValueError:
+            self.root.ids.input_miles.text = str(0)
 
 
 ConvertMilesKmApp().run()
