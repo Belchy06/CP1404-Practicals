@@ -15,27 +15,48 @@ def main():
     print("My Guitars!")
     name = input("Name: ")
     while name != "":
-        year = validate_numeric_input("Year")
-        cost = validate_numeric_input("Cost")
-        guitars.append(Guitar(name, year, cost))
+        year = get_year_input()
+        cost = get_cost_input()
+        guitar_to_add = Guitar(name, year, cost)
+        guitars.append(guitar_to_add)
+        print("{guitar.name} ({guitar.year}) : {guitar.cost} added".format(guitar=guitar_to_add))
 
     print_guitars(guitars)
 
 
-def validate_numeric_input(input_name):
+def get_cost_input():
     """
-    Validate the numeric inputs required to be above 0
+    Validate the cost input required to be above 0
     """
     valid_input = False
     while not valid_input:
         try:
-            user_input = int(input("{}}: ".format(input_name)))
+            user_input = float(input("Cost: $"))
             if user_input < 0:
-                print("{} must be greater than or equal to 0".format(input_name))
+                print("Cost must be greater than or equal to 0")
             else:
                 valid_input = True
         except:
-            print("Please enter a valid {}!".format(input_name))
+            print("Cost must be greater than or equal to 0")
+            user_input = float(input("Cost: $"))
+    return user_input
+
+
+def get_year_input():
+    """
+    Validate the year input required to be above 0
+    """
+    valid_input = False
+    while not valid_input:
+        try:
+            user_input = int(input("Year: "))
+            if user_input < 0:
+                print("Year must be greater than or equal to 0")
+            else:
+                valid_input = True
+        except:
+            print("Year must be greater than or equal to 0")
+            user_input = int(input("Year: "))
     return user_input
 
 
