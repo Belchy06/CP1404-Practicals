@@ -36,9 +36,9 @@ class ConvertMilesKmApp(App):
 
         self.root.ids.input_miles.text = str(new_value)
 
-    def convert(self, miles_string):
+    def handle_convert(self, miles_string):
         try:
-            # Check if input is a number by trying to convert value calculated to a float
+            # Check if input is a number by trying to convert miles_string to a float
             miles = float(miles_string)
             self.result = str(miles * CONVERSION_RATIO)
         except ValueError:
